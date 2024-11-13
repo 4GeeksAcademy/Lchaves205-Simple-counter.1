@@ -5,6 +5,7 @@ import ReactDOM from 'react-dom/client';
 import 'bootstrap';
 import './icons.js';
 import SimpleCounter from "./component/simpleCounter.jsx"
+import '@fortawesome/fontawesome-free/css/all.css';
 
 // Include your index.scss file into the bundle
 import '../styles/index.scss';
