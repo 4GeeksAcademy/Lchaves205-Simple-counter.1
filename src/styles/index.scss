@@ -1,0 +1,34 @@
+// Correct way to include Bootstrap and FontAwesome
+@use "~bootstrap/scss/bootstrap" as *;  // Ensure the correct path to Bootstrap
+@import '~@fortawesome/fontawesome-free/css/all.css';  // FontAwesome import is correct
+
+// Your custom styles follow
+.bigCounter {
+    text-align: center;
+    background: black;
+    position: relative;  // Make sure it's positioned so z-index works
+    z-index: 1;  // Place the content above error messages
+  }
+  
+  .bigCounter div {
+    display: inline-block;
+    font-size: 60px;
+    line-height: 60px;
+    background: #101010;
+    color: white;
+    padding: 10px;
+    margin: 3px;
+    position: relative; // Ensure this also respects z-index
+    z-index: 2; // Makes sure individual elements are above any potential background
+  }
+
+  .error-message {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: red;
+    color: white;
+    z-index: 0; // Lower than the page content
+  }
+  
