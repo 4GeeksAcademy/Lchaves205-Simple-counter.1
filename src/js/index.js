@@ -4,12 +4,11 @@ import ReactDOM from 'react-dom/client';
 // Include bootstrap npm library into the bundle
 import 'bootstrap';
 import './icons.js';
-import SimpleCounter from "./component/simpleCounter.jsx"
+import SimpleCounter from "./component/simpleCounter.jsx";
 import '@fortawesome/fontawesome-free/css/all.css';
 
-// Include your index.scss file into the bundle
-import '../styles/index.scss';
-
+// Include your index.css file into the bundle
+import '../styles/index.css';
 
 let counter = 0;
 const root = ReactDOM.createRoot(document.getElementById('app'));
@@ -20,7 +19,7 @@ setInterval(() => {
     const two = Math.floor(counter / 10);
     const one = Math.floor(counter / 1);
     counter++;
-    
+
     root.render(
         <SimpleCounter digitOne={one} digitTwo={two} digitThree={three} digitFour={four} />
     );
