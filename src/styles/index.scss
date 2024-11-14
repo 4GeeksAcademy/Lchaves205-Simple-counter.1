@@ -1,7 +1,9 @@
-// Correct way to include Bootstrap and FontAwesome
-@use "~bootstrap/scss/bootstrap" as *;  // Ensure the correct path to Bootstrap
-@import '~@fortawesome/fontawesome-free/css/all.css';  // FontAwesome import is correct
+// Put all @use statements at the very top
+//@use 'src/styles/mixins' as *;
+//@use 'node_modules/@fortawesome/fontawesome-free/scss/all' as fa;
 
+
+// Then, import or other styles
 // Your custom styles follow
 .bigCounter {
     text-align: center;

@@ -28,31 +28,23 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.(js|jsx)$/,
-        exclude: /node_modules/,
-        use: ['babel-loader']
-      },
-      {
-        test: /\.css$/,
-        use: ['style-loader', 'css-loader']
-      },
-      {
         test: /\.scss$/,
-        use: ['style-loader', 'css-loader', 'sass-loader']
+        use: [
+          'style-loader',
+          'css-loader',
+          {
+            loader: 'sass-loader',
+            options: {
+              sassOptions: {
+                includePaths: ['node_modules'],
+              },
+            },
+          },
+        ],
       },
-      {
-        test: /\.(png|svg|jpg|gif)$/,
-        use: {
-          loader: 'file-loader',
-          options: { name: '[name].[ext]' }
-        }
-      },
-      {
-        test: /\.(woff|woff2|ttf|eot|svg)$/,
-        use: ['file-loader']
-      }
-    ]
+    ],
   },
+  
   resolve: {
     extensions: ['.js', '.jsx']
   },
